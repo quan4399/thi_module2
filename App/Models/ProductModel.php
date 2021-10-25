@@ -43,15 +43,19 @@ class ProductModel
     {
         $sql = "UPDATE products 
                 SET  nameProduct = :nameProduct , typeProduct = :typeProduct,
-                    priceProduct = :priceProduct, quantityProduct = :quantityProduct 
+                    priceProduct = :priceProduct, quantityProduct = :quantityProduct ,dateCreate = :dateCreate,
+                    description= :description
                 where id = :id" ;
         $stmt= $this->pdo->prepare($sql);
         $stmt->bindParam("nameProduct",$product['nameProduct']);
         $stmt->bindParam("typeProduct",$product['typeProduct']);
         $stmt->bindParam("priceProduct",$product['priceProduct']);
         $stmt->bindParam("quantityProduct",$product['quantityProduct']);
+        $stmt->bindParam("dateCreate",$product['dateCreate']);
+        $stmt->bindParam("description",$product['description']);
         $stmt->bindParam("id",$id);
         $stmt->execute();
+
     }
     public function getDetailById($id)
     {

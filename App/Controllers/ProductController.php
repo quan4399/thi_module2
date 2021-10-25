@@ -62,11 +62,11 @@ class ProductController
                 'typeProduct' => $_POST['typeProduct'],
                 'priceProduct' => $_POST['priceProduct'],
                 'quantityProduct' => $_POST['quantityProduct'],
-                'description' => $_POST['description'],
                 'dateCreate' => $_POST['dateCreate'],
+                'description' => $_POST['description'],
             ];
             $this->productModel->updateProduct($id, $product);
-            header("location: index.php");
+            header("location:index.php");
         }
     }
 }
