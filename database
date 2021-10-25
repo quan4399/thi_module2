@@ -1,0 +1,13 @@
+create database thi
+use thi
+create table products(
+	idProduct int auto_incriment primary key,
+	nameProduct varchar(255),
+	typeProduct varchar(255),
+	priceProduct int,
+	quantityProduct int,
+	description varchar(255),
+	dateCreate date
+)
+
+
